@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!-- Dynamic Background video  -->
+    <video id="videoo" autoplay muted loop>
+        <source src="https://media.istockphoto.com/id/962500712/video/4k-tl-cloudy-sky-with-sun-rays.mp4?s=mp4-640x640-is&k=20&c=nPPwovJCYRu0T7Hbz2K38ut6QOLZjIEcQJS2ZqqQoVA=" type="video/mp4">
+    </video>
+
+    <!-- Overlay effect -->
+    <div class="overlay">
+
+    <!-- Main App -->
+    <main class="app">
+
+        <!-- Header -->
+        <header>
+
+            <div class="logo">
+                <h1>Productivity Dashboard</h1>
+            </div>
+
+            <div class="header-home">
+
+                <div class="weather-home">
+                  <div class="weather-header">
+                <span id="city">Loading...</span>
+                   <img id="weatherIcon">
+                    </div>
+
+                    <h2 id="temp">--°C</h2>
+
+                      <p id="condition">Loading...</p>
+                </div>
+
+                <div class="datetime-home">
+                    <p id="currentDate"></p>
+
+                   <h2 id="currentTime"></h2>
+                </div>
+
+                <button class="theme-btn">
+                    Theme
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <div class="welcome">
+                <h2>Good Morning 👋</h2>
+                <p>Let's make today productive.</p>
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="card" id="toodoo">
+                      <div class="image">
+                   <img src="./assest/tototot.jpg" alt="">
+                       </div>
+
+                       <h3>Todo</h3>
+                      <p>Manage your daily tasks.</p>
+                </div>
+
+                <div class="card" id="plan">
+                     <div class="image">
+                   <img src="./assest/planning.jpg" alt="">
+                       </div>
+
+                       <h3>Planner</h3>
+
+                    <p>Plan your schedule effectively.</p>
+                </div>
+
+                <div class="card" id="goall">
+                    <div class="image">
+                   <img src="./assest/goal.jpg" alt="">
+                       </div>
+
+                       <h3>Goals</h3>
+
+                    <p>Track your personal goals.</p>
+                </div>
+
+                <div class="card" id="pomo">
+                   
+                   
+                    <div class="image">
+                   <img src="./assest/pomodomor.jpg" alt="">
+                       </div>
+
+                       <h3> Pomodoro</h3>
+
+                    <p> Stay focused with timed sessions.</p>
+                </div>
+
+                <div class="card" id="moto">
+                      <div class="image">
+                    <img src="./assest/motivation.jpg" alt="">
+                       </div>
+
+                       <h3>  Motivation </h3>
+
+                    <p> Get inspired every day.</p>
+                </div>
+
+                <div class="card" id="weadu">
+                   <div class="image">
+                      <img src="./assest/weather.jpg" alt="">
+                       </div>
+
+                       <h3>   Weather </h3>
+
+                    <p> Check the current weather.</p>
+                </div>
+
+            </div>
+
+        </section> 
+
+        <!-- Feature Container -->
+
+        <section id="container">
+
+            <section id="todo">
+                <button class="back-btn">← Back</button>
+               <div class="todo-container">
+
+        <!-- Heading -->
+        <div class="todo-header">
+            <h2>📝 Todo List</h2>
+        </div>
+
+        <!-- Input Area -->
+        <div class="todo-input">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Add a new task..."
+            >
+            <button id="addTaskBtn">Add</button>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list" id="taskList">
+
+          
+  </div>
+        <!-- Footer -->
+        <div class="todo-footer">
+             <p>Total: <span id="total">0</span></p>
+    <p>Completed: <span id="completed">0</span></p>
+        </div>
+
+  
+            </section>
+
+            <section id="planner">
+                <!-- Planner UI -->
+                 <button class="back-btn">← Back</button>
+                <header class="header">
+                    <h1>🗓️ Daily Planner</h1>
+                    <div class="top-bar">
+                    <p id="date"></p>
+                    <button id="resetBtn">Reset Day</button>
+                    </div>
+                </header>
+
+                <!-- MAIN APP -->
+                <div class="planner1">
+
+                    <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">9 - 10 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                    <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">10 - 11 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                    <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">11 - 12 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">12 - 13 PM</div>
+
+                    <input type="text" class="" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">13 - 14 PM</div>
+
+                    <input type="text" class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">14 - 15 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                    <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">15 - 16 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">16 - 17 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">17 - 18 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">18 - 19 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">19 - 20 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time"> 20 - 21 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">21 - 22 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                      <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">22 - 23 PM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">23 - 24 PM</div>
+
+                    <input type="text" class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">00 - 1 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">1 - 2 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                        <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">2 - 3 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">3 - 4 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">4 - 5 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">5 - 6 AM</div>
+
+                    <input type="text" class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                      <div class="slot">
+                    <div class="time">6 - 7 AM</div>
+
+                    <input type="text" class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">7 - 8 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+                     <!-- SLOT -->
+                    <div class="slot">
+                    <div class="time">8 - 9 AM</div>
+
+                    <input type="text"class="inp" placeholder="Enter task">
+
+                    <button class="save">Save</button>
+                    <button class="delete">Del</button>
+                    </div>
+               </div>
+            </section>
+
+            <section id="goals">
+                <!-- Goals UI -->
+                 <button class="back-btn">← Back</button>
+                  <div class="goal-container">
+
+        <!-- Heading -->
+        <div class="goal-header">
+            <h2>🎯 Today's Goals</h2>
+        </div>
+
+        <!-- Input Area -->
+        <div class="goal-input">
+            <input
+                type="text"
+                id="goalInput"
+                placeholder="Add a new Goal..."
+            >
+            <button id="goalBtn">goal</button>
+        </div>
+        
+        <!-- Goal List -->
+        <div class="goal-list" id="goalList">
+
+          
+  </div>
+        <!-- Footer -->
+        <div class="goal-footer">
+             <p>Progress: <span id="goalTotal">0</span></p>
+    <p>Completed: <span id="goalCompleted">0</span></p>
+        </div>
+
+            </section>
+
+            <section id="pomodoro">
+                <!-- Pomodoro UI -->
+                 <button class="back-btn">← Back</button>
+                <div class="pomodoro-card">
+
+                    <h2>🍅 Pomodoro Timer</h2>
+
+                    <h3 id="session">Work Session</h3>
+
+                    <div id="timer">
+                        25:00
+                    </div>
+
+                    <div class="pomodoro-buttons">
+                        <button id="start">Start</button>
+                        <button id="pause">Pause</button>
+                    </div>
+
+                    <button id="reset">Reset</button>
+
+                </div>
+            </section>
+
+            <section id="motivation">
+                <!-- Motivation UI -->
+                <button class="back-btn">← Back</button>
+                <div class="quote-card">
+
+                <h2>💡 Motivation Quote</h2>
+
+                <p id="quoteText">
+                    Click the button to get inspired!
+                </p>
+
+                <p id="quoteAuthor"></p>
+
+                <button id="newQuote">
+                    New Quote
+                </button>
+
+            </div>
+                        </section>
+
+            <section id="weather">
+                <!-- Weather UI -->
+                <button class="back-btn">← Back</button>
+                <div class="weather-card">
+
+                    <h2 id="city">Loading...</h2>
+                    <img id="weatherIcon" alt="Weather Icon">
+
+                    <h1 id="temp">--°C</h1>
+
+                    <p id="condition">Loading...</p>
+
+                    <p id="humidity">Humidity --</p>
+
+                    <p id="wind">Wind --</p>
+
+                    <p id="rain">Rain --</p>
+
+                    </div>
+            </section>
+
+        </section>
+
+    </main>
+    </div>
+<script src="script.js"></script>
+
+</body>
+</html>
