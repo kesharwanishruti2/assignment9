@@ -349,7 +349,7 @@ object-fit:contain;
     justify-content: center;
 }
 .goal-container{
-    width:600px;
+    width:550px;
     min-height:600px;
      background:var(--container-bg);
     color:var(--text-color);
