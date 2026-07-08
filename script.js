@@ -565,7 +565,7 @@ let wind1 = document.querySelector("#wind");
 let weatherIcon = document.querySelector("#weatherIcon");
 
 
-const apiKey = "0b985c9207c840d4955184219260707";
+const apiKey = "3d1fdebd5a87c51f9bce82403bb278dc";
 //lodaing
  function showLoad(){
 city.innerText = "Loading...";
@@ -582,20 +582,44 @@ navigator.geolocation.getCurrentPosition(
     showLoad()
  const latitude = position.coords.latitude;
  const longitude = position.coords.longitude;
-   const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
-
+   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 try{
- const response1 = await fetch(url);
-const data1 = await response1.json();
+const response = await fetch(url);
+const data1 = await response.json();
+
+console.log("Status:", response.status);
+console.log("Data:", data1);
+console.log("URL:", url);
+if (!response.ok) {
+    throw new Error(data1.message);
+}
+console.log(url);
+
 console.log(data1);
-city.innerText = data1.location.name
-temperature.innerText =data1.current.temp_c + "°C";
-condition.innerText =  data1.current.condition.text
-humid.innerText = data1.current.humidity + "%";
-rain.innerText = data1.current.precip_mm + " mm";
- wind1.innerText = data1.current.wind_kph + " km/h";
- weatherIcon.src = "https:" + data1.current.condition.icon;
-weatherIcon.alt = data1.current.condition.text;
+
+city.innerText = data1.name;
+temperature.innerText = data1.main.temp + "°C";
+condition.innerText = data1.weather[0].main;
+humid.innerText = data1.main.humidity + "%";
+rain.innerText = data1.rain ? data1.rain["1h"] + " mm" : "0 mm";
+wind1.innerText = data1.wind.speed + " m/s";
+
+weatherIcon.src =
+`https://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`;
+
+weatherIcon.alt = data1.weather[0].description;
+console.log(data1.name);
+console.log(data1.main.temp);
+console.log(data1.weather[0].main);
+dashboardCity.innerText = data1.name;
+dashboardTemp.innerText = data1.main.temp + "°C";
+dashboardCondition.innerText = data1.weather[0].main;
+
+dashboardWeatherIcon.src =
+`https://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`;
+
+dashboardWeatherIcon.alt = data1.weather[0].description;
+
    }
  catch(error){
 console.log(error)
@@ -604,7 +628,7 @@ temperature.innerText = "--°C";
 condition.innerText = "Unable to fetch weather";
 humid.innerText = "--%";
 rain.innerText = "-- mm";
-wind.innerText = "-- km/h";
+wind1.innerText = "-- km/h";
     }  
 },
 () => {
@@ -618,6 +642,7 @@ wind1.innerText = "-- km/h";
 
 
 )
+
 //==============================================current date time =======================================================
 let currentDate = document.querySelector("#currentDate")
 let currentTime = document.querySelector("#currentTime")
@@ -657,3 +682,8 @@ setInterval(updateTimeDate, 1000);
 // console.log(month)
 // console.log(date)
 // console.log(year)
+//===========================dashboard=================================================
+let dashboardCity = document.querySelector("#dashboardCity");
+let dashboardTemp = document.querySelector("#dashboardTemp");
+let dashboardCondition = document.querySelector("#dashboardCondition");
+let dashboardWeatherIcon = document.querySelector("#dashboardWeatherIcon");

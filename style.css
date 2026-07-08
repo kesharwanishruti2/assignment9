@@ -62,7 +62,7 @@ html.night {
 html,body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
-    overflow:hidden;
+    /* overflow:hidden; */
     color:white;
      background: var(--bg-color);
     color: var(--text-color);
@@ -748,6 +748,32 @@ button {
 font-size:13px;
     text-align:center;
 }
+
+#dashboardCity{
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+#dashboardWeatherIcon{
+    width: 30px;
+    height: 30px;
+}
+
+#dashboardTemp{
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+#dashboardCondition{
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+}
+
+
 @media(max-width:992px){
  .feature-grid{
  grid-template-columns:repeat(2,1fr);
